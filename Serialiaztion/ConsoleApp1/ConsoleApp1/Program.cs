@@ -4,11 +4,14 @@
     {
         public static void Main(string[]args)
         {
-            JsonDataOperations.jsonSerialize();
-            
-            JsonDataOperations.JsonDeserialization();
-            Console.ReadLine();
+            //JsonDataOperations.jsonSerialize();
 
+            //JsonDataOperations.JsonDeserialization();
+            XMLDataOperation xml = new XMLDataOperation();
+            //XMLDataOperation.voidxmlSerialize();
+            XMLDataOperation.DXmlDeSerialize();
+            Console.ReadLine();
+            //add switch case here
 
         }
         
