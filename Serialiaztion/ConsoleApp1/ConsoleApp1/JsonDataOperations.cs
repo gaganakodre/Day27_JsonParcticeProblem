@@ -13,9 +13,9 @@ namespace JsonDataOperations
         public static void jsonSerialize()
         {
             string jsonPath= @"G:\visualstudio\FileIOTextFile\JsonTextFile.json";
-            
+
             //Collection intializer
-            List<Person> person=new List<Person>();
+            List<Person> person = new List<Person>();
             person.Add(new Person() { PersonId = 12, Name = "Kavitha", Address = "Bangaluru" });
             person.Add(new Person() { PersonId = 13, Name = "Kavana", Address = "Bengal" });
             person.Add(new Person() { PersonId = 14, Name = "Katha", Address = "Ballery" });
@@ -32,19 +32,23 @@ namespace JsonDataOperations
             string jsonPath = @"G:\visualstudio\FileIOTextFile\JsonTextFile.json";
             if(FileExist(jsonPath))
             {
+                
                 string JsonData=File.ReadAllText(jsonPath);
-                var result=JsonConvert.DeserializeObject<List<Person>>(JsonData);
+                List<Person> result=JsonConvert.DeserializeObject<List<Person>>(JsonData);
+                if(result.Count!=0)
                 foreach(Person person in result)
                 {
                     
                     Console.WriteLine(person.ToString());
                 }
+                //return result;
                 
             }
             else
             {
                 Console.WriteLine("File not exist");
             }
+            //return null;
 
             
 
@@ -66,3 +70,18 @@ namespace JsonDataOperations
     }
     
 }
+////o/p:
+//Enter the choice you want
+// 1.JsonSerialization
+// 2.jsonDeserializeation
+// 3.XMLserialization
+// 4.XMLDeserialization
+// 5.CSVSerialization
+// 6.CSVdeserialization
+// 7.ReadFreomCsvWriteToJson
+// 8.ReadFromJsonWriteIntoCsv
+//2
+//File Exist
+//Id:  12 Name: Kavitha Address:  Bangaluru
+//Id:  13 Name: Kavana Address:  Bengal
+//Id:  14 Name: Katha Address:  Ballery
