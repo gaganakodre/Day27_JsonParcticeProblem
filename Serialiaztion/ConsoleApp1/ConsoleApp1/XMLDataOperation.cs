@@ -9,7 +9,7 @@ namespace JsonDataOperations
 {
     public class XMLDataOperation
     {
-        public static void voidxmlSerialize()
+        public static void xmlSerialize()
         {
             try
             {
