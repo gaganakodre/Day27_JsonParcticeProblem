@@ -10,12 +10,12 @@ namespace JsonDataOperations
 {
     public class CSVOperation
     {
-        public static void csvSerilaization(List<Person> person,string csvpath)
+        public static void csvSerilaization()
         {
             try
             {
-                csvpath = @"G:\visualstudio\FileIOTextFile\DataOperationCSV.csv";
-                 person = new List<Person>();
+                string csvpath = @"G:\visualstudio\FileIOTextFile\DataOperationCSV.csv";
+                List<Person> person = new List<Person>();
                 person.Add(new Person() { PersonId = 12, Name = "Kavitha", Address = "Bangaluru" });
                 person.Add(new Person() { PersonId = 13, Name = "Kavana", Address = "Bengal" });
                 person.Add(new Person() { PersonId = 14, Name = "Katha", Address = "Ballery" });

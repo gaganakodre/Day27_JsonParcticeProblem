@@ -80,6 +80,10 @@ namespace JsonDataOperations
 // 6.CSVdeserialization
 // 7.ReadFreomCsvWriteToJson
 // 8.ReadFromJsonWriteIntoCsv
+//case1
+//[{"PersonId":12,"Name":"Kavitha","Address":"Bangaluru"},
+//{ "PersonId":13,"Name":"Kavana","Address":"Bengal"},
+//{ "PersonId":14,"Name":"Katha","Address":"Ballery"}]
 //2
 //File Exist
 //Id:  12 Name: Kavitha Address:  Bangaluru
