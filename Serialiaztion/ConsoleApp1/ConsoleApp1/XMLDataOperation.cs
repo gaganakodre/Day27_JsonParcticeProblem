@@ -14,11 +14,11 @@ namespace JsonDataOperations
             try
             {
                 string xmlpath = @"G:\visualstudio\FileIOTextFile\xmlDataOperation.xml";
-                //List<Person> person = new List<Person>();
-                //person.Add(new Person() { PersonId = 12, Name = "Kavitha", Address = "Bangaluru" });
-                //person.Add(new Person() { PersonId = 13, Name = "Kavana", Address = "Bengal" });
-                //person.Add(new Person() { PersonId = 14, Name = "Katha", Address = "Ballery" });
-                Person person = new Person() { PersonId = 12, Name = "Kavitha", Address = "Bangaluru" };
+                List<Person> person = new List<Person>();
+                person.Add(new Person() { PersonId = 12, Name = "Kavitha", Address = "Bangaluru" });
+                person.Add(new Person() { PersonId = 13, Name = "Kavana", Address = "Bengal" });
+                person.Add(new Person() { PersonId = 14, Name = "Katha", Address = "Ballery" });
+                //Person person = new Person() { PersonId = 12, Name = "Kavitha", Address = "Bangaluru" };
                 XmlSerializer xml = new XmlSerializer(typeof(Person));
 
                 StreamWriter sw = new StreamWriter(xmlpath);
