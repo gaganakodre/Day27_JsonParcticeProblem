@@ -14,9 +14,9 @@ namespace JsonDataOperations
         public static void ReadFromCsvWriteIntoJson()
         {
             string jsonpath = @"G:\visualstudio\FileIOTextFile\jsonDataOperation.json";
-            List<Person> list = CSVOperation.CSVDeserialize();
+            List<Person> list = CSVOperation.CSVDeserialize();//csv deserialization
             //jsonSerialize();
-            string result = JsonConvert.SerializeObject(list);
+            string result = JsonConvert.SerializeObject(list);//json serialization
             //objcet to string
 
             using (StreamWriter sw = new StreamWriter(jsonpath))
@@ -29,8 +29,8 @@ namespace JsonDataOperations
         public static void ReadFromJsonWriteIntoCsv()
         {
             string csvpath = @"G:\visualstudio\FileIOTextFile\JsontocsvTextFile.csv";
-            List<Person> persons = JsonDeserialization();
-            csvSerilaization(persons, csvpath);
+            List<Person> persons = JsonDeserialization();//json deserialization
+            csvSerilaization(persons, csvpath);//csv serilaization
 
         }
         public static List<Person> JsonDeserialization()//string to object
@@ -77,11 +77,7 @@ namespace JsonDataOperations
         {
             try
             {
-                //csvpath = @"G:\visualstudio\FileIOTextFile\DataOperationCSV.csv";
-                //person = new List<Person>();
-                //person.Add(new Person() { PersonId = 12, Name = "Kavitha", Address = "Bangaluru" });
-                //person.Add(new Person() { PersonId = 13, Name = "Kavana", Address = "Bengal" });
-                //person.Add(new Person() { PersonId = 14, Name = "Katha", Address = "Ballery" });
+                
 
 
                 using (StreamWriter sw = new StreamWriter(csvpath))

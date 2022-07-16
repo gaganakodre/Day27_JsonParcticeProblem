@@ -20,13 +20,14 @@ namespace JsonDataOperations
                 person.Add(new Person() { PersonId = 13, Name = "Kavana", Address = "Bengal" });
                 person.Add(new Person() { PersonId = 14, Name = "Katha", Address = "Ballery" });
 
-
+                //steams are like sequence of bytes
                 using (StreamWriter sw = new StreamWriter(csvpath))
                 { 
-
-                    CsvWriter csvWriter = new CsvWriter(sw, CultureInfo.InvariantCulture);
+                    //cultureinfo - it provides the specific information like in local eg:calander style etc 
+                    //csv writer from the csv helper class
+                    CsvWriter csvWriter = new CsvWriter(sw, CultureInfo.InvariantCulture);//returns the object which is cultur inpedendent
                     //this has to be written to write the records inside the file
-                    csvWriter.WriteRecords(person);
+                    csvWriter.WriteRecords(person);//write records used to write list of records inside the csvfile
                 }
                 
             }
@@ -41,9 +42,10 @@ namespace JsonDataOperations
             try
             {
                 string csvpath = @"G:\visualstudio\FileIOTextFile\DataOperationCSV.csv";
-                StreamReader sr = new StreamReader(csvpath);
+                StreamReader sr = new StreamReader(csvpath);//it initializes a new instance of streamreader class
                 CsvReader cr = new CsvReader(sr, CultureInfo.InvariantCulture);
-                List<Person> res = cr.GetRecords<Person>().ToList();
+                List<Person> res = cr.GetRecords<Person>().ToList();//it will get the all the records inside the csv file
+                                                                    //and converts into each type
                 foreach (Person person in res)
                 {
                     Console.WriteLine(person);

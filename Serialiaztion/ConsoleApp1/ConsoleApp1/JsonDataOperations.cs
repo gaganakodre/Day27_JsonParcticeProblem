@@ -19,6 +19,8 @@ namespace JsonDataOperations
             person.Add(new Person() { PersonId = 12, Name = "Kavitha", Address = "Bangaluru" });
             person.Add(new Person() { PersonId = 13, Name = "Kavana", Address = "Bengal" });
             person.Add(new Person() { PersonId = 14, Name = "Katha", Address = "Ballery" });
+            //jsonconvert provide the methods to convert between .net to json
+            //serializeobject it serilaizes the specified object into json formate
             string result = JsonConvert.SerializeObject(person);//objcet to string
             using (StreamWriter sw = new StreamWriter(jsonPath)) 
             {
@@ -33,7 +35,8 @@ namespace JsonDataOperations
             if(FileExist(jsonPath))
             {
                 
-                string JsonData=File.ReadAllText(jsonPath);
+                string JsonData=File.ReadAllText(jsonPath);//read all the text in the file and closes the file
+                //deserialize this deserilaizes method for converting json into .net
                 List<Person> result=JsonConvert.DeserializeObject<List<Person>>(JsonData);
                 if(result.Count!=0)
                 foreach(Person person in result)
@@ -56,7 +59,7 @@ namespace JsonDataOperations
         public static bool FileExist(string path)
         {
             string InputFile = @"G:\visualstudio\FileIOTextFile\JsonTextFile.json";
-            if (File.Exists(InputFile))
+            if (File.Exists(InputFile))//weather file exist or not//returns boolean values
             {
                 Console.WriteLine("File Exist");
                 return true;
